@@ -47,6 +47,8 @@ class CategoriesViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             picture.centerYAnchor.constraint(equalTo: centerYAnchor),
             picture.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+            picture.heightAnchor.constraint(equalToConstant: 44),
+            picture.widthAnchor.constraint(equalToConstant: 44),
             
             title.centerYAnchor.constraint(equalTo: centerYAnchor),
             title.leadingAnchor.constraint(equalTo: picture.trailingAnchor, constant: 12),

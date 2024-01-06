@@ -13,6 +13,7 @@ struct TransactionModel {
     var category: Category
     var date: Date
     var note: String
+    var expenceIncome: Bool
 }
 
 struct Category {
