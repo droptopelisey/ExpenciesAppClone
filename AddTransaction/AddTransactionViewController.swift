@@ -224,9 +224,9 @@ extension AddTransactionViewController: UITableViewDataSource {
 
 extension AddTransactionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let categoriesVC = CategoriesViewController()
+        present(categoriesVC, animated: true, completion: nil)
     }
-    
 }
 
 
