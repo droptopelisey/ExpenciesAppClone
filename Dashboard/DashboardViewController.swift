@@ -115,7 +115,8 @@ class DashboardViewController: UIViewController {
     
     @objc
     func circleButtonAction() {
-        print("Button was tapped")
+        let vc = AddTransactionViewController(viewModel: AddTransactionViewModel())
+        present(vc, animated: true)
     }
     
 }
