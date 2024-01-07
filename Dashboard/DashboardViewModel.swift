@@ -25,14 +25,7 @@ class DashboardViewModel: DashboardViewModelProtocol {
     }
     
     func getData() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { [weak self ] _ in
-            self?.mockData = [
-                TransactionModel(title: "qqq", amount: 123.0, category: Category(picture: "pic", title: "hhh1"), date: Date(), note: "123"),
-                TransactionModel(title: "vwv", amount: 223, category: Category(picture: "hhh", title: "hhh2"), date: Date(), note: "223"),
-                TransactionModel(title: "jjg", amount: 665, category: Category(picture: "nnn", title: "hhh3"), date: Date(), note: "323"),
-                TransactionModel(title: "lll", amount: 456, category: Category(picture: "ggg", title: "hhh5"), date: Date(), note: "423"),
-            ]
-        }
+       mockData = TransactionsStoreClone1.shared.getData()
     }
     
     func removeData(at index: Int) {

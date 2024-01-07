@@ -143,7 +143,16 @@ class AddTransactionViewController: UIViewController {
     
     @objc
     func saved() {
-        print("was saved")
+        viewModel.save(
+            model: TransactionModel(
+                title: "AAAA",
+                amount: 345.6,
+                category: Category(picture: "plus", title: "gfgfg"),
+                date: Date(),
+                note: "hhfhhf",
+                expenceIncome: false
+            )
+        )
     }
 }
 

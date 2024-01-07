@@ -92,7 +92,7 @@ extension HistoryViewController: UITableViewDataSource {
         else {
             return UITableViewCell()
         }
-        cell.setupModel(transaction: TransactionModel(title: "\(filtredNumbers[indexPath.row])", amount: 1, category: Category(picture: "plus", title: "plus"), date: Date(), note: "ho ho ho"))
+        cell.setupModel(transaction: TransactionModel(title: "\(filtredNumbers[indexPath.row])", amount: 1, category: Category(picture: "plus", title: "plus"), date: Date(), note: "ho ho ho", expenceIncome: false))
         return cell
     }
     
