@@ -45,7 +45,7 @@ class AddTransactionTableViewCell: UITableViewCell {
             summText.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
             summText.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
             summText.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
-            summText.heightAnchor.constraint(equalToConstant: 44),
+            summText.heightAnchor.constraint(equalToConstant: 24),
         ])
         
     }

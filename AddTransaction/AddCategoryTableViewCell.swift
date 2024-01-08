@@ -26,13 +26,6 @@ class AddCategoryTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
-    private lazy var categoryName = {
-        let label = UILabel(frame: .zero)
-        label.text = "Car and Some"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
     
     private lazy var rightSidePic = {
        let image = UIImageView(image: UIImage(systemName: "chevron.right"))
@@ -60,21 +53,17 @@ class AddCategoryTableViewCell: UITableViewCell {
     private func setupSubViews() {
         addSubview(categoryPic)
         addSubview(categoryLabel)
-        addSubview(categoryName)
         addSubview(rightSidePic)
         
         NSLayoutConstraint.activate([
             categoryPic.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            categoryPic.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            categoryPic.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12),
             
-            categoryLabel.leadingAnchor.constraint(equalTo: categoryPic.trailingAnchor, constant: 20),
-            categoryLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            
-            categoryName.leadingAnchor.constraint(equalTo: categoryPic.trailingAnchor, constant: 20),
-            categoryName.topAnchor.constraint(equalTo: categoryLabel.bottomAnchor, constant: 10),
+            categoryLabel.leadingAnchor.constraint(equalTo: categoryPic.trailingAnchor, constant: 24),
+            categoryLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 12),
             
             rightSidePic.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            rightSidePic.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+            rightSidePic.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12)
         ])
         
     }

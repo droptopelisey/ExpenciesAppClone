@@ -9,6 +9,12 @@ import UIKit
 
 class AddTransactionViewController: UIViewController {
     
+    var enteredTitle: String = ""
+    var enteredSumm: String = ""
+    var enteredSegment: Bool = false
+    var enterdNote: String = ""
+    var enteredCategory: Category = Category(picture: "car", title: "cars")
+    
     enum Sections: Int, CaseIterable {
         case first
         case second
@@ -19,7 +25,7 @@ class AddTransactionViewController: UIViewController {
     
     private lazy var tableView = {
         let table = UITableView(frame: .zero, style: .insetGrouped)
-        table.backgroundColor = .red
+        table.backgroundColor = UIColor(named: "bgColor")
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()

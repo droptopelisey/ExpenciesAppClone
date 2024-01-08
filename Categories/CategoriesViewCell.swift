@@ -12,13 +12,16 @@ class CategoriesViewCell: UITableViewCell {
     // MARK: Subviews
     
     private lazy var picture = {
-        let pic = UIImageView(image: UIImage(systemName: "plus"))
+        let pic = UIImageView(image: UIImage(systemName: "arrowshape.up.circle.fill"))
+        pic.backgroundColor = .green
+        pic.layer.cornerRadius = 20
         pic.translatesAutoresizingMaskIntoConstraints = false
         return pic
     }()
     
-    private lazy var title = {
+    private lazy var titleLabel = {
         let title = UILabel(frame: .zero)
+        title.text = "Title"
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
     }()
@@ -41,17 +44,21 @@ class CategoriesViewCell: UITableViewCell {
     // MARK: Setups
     
     private func setupSubViews() {
-        addSubview(picture)
-        addSubview(title)
+       addSubview(picture)
+        addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
             picture.centerYAnchor.constraint(equalTo: centerYAnchor),
-            picture.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+            picture.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             picture.heightAnchor.constraint(equalToConstant: 44),
             picture.widthAnchor.constraint(equalToConstant: 44),
             
-            title.centerYAnchor.constraint(equalTo: centerYAnchor),
-            title.leadingAnchor.constraint(equalTo: picture.trailingAnchor, constant: 12),
+            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: picture.trailingAnchor, constant: 10),
         ])
+    }
+    func setupPicturesAndLabels(title: String, pitureName: String) {
+        picture.image = UIImage(systemName: pitureName)
+        titleLabel.text = title
     }
 }

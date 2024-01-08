@@ -57,7 +57,7 @@ class TransactionsStoreClone1: NSObject, TransactionsStoreProtocol {
     }
     
     func saveData(_ data: TransactionModel) {
-        var model = TransactionCD(context: context)
+        let model = TransactionCD(context: context)
         model.name = data.title
         model.note = data.note
         model.amount = data.amount

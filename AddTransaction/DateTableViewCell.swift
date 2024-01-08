@@ -47,10 +47,11 @@ class DateTableViewCell: UITableViewCell {
             
             NSLayoutConstraint.activate([
                 nameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-                nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+                nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12),
                 
                 datePik.centerYAnchor.constraint(equalTo: self.centerYAnchor),
                 datePik.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                datePik.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12)
                 
             ])
         }
