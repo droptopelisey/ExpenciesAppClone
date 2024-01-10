@@ -57,8 +57,13 @@ class CategoriesViewCell: UITableViewCell {
             titleLabel.leadingAnchor.constraint(equalTo: picture.trailingAnchor, constant: 10),
         ])
     }
-    func setupPicturesAndLabels(title: String, pitureName: String) {
-        picture.image = UIImage(systemName: pitureName)
+    
+    
+    func setupPicture(name: String) {
+        picture.image = UIImage(systemName: name)
+    }
+    
+    func setupLabel(title: String) {
         titleLabel.text = title
     }
 }

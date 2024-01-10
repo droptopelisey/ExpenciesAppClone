@@ -116,7 +116,9 @@ class DashboardViewController: UIViewController {
     @objc
     func circleButtonAction() {
         let vc = AddTransactionViewController(viewModel: AddTransactionViewModel())
+//        let nVc = UINavigationController(rootViewController: vc)
         present(vc, animated: true)
+//        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

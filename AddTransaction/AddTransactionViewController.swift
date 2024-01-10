@@ -149,14 +149,23 @@ class AddTransactionViewController: UIViewController {
     
     @objc
     func saved() {
+        guard
+            let firstCell = tableView.cellForRow(at: IndexPath(row: 0, section: Sections.first.rawValue)) as? AddTransactionTableViewCell,
+            let secondCell = tableView.cellForRow(at: IndexPath(row: 1, section: Sections.first.rawValue)) as? AddTransactionTableViewCell,
+            let thirdCell = tableView.cellForRow(at: IndexPath(row: 2, section: Sections.first.rawValue)) as? DateTableViewCell,
+            let fifthhCell = tableView.cellForRow(at: IndexPath(row: 0, section: Sections.third.rawValue)) as? AddTransactionTableViewCell
+
+        else {
+            return
+        }
         viewModel.save(
             model: TransactionModel(
-                title: "AAAA",
-                amount: 345.6,
+                title: secondCell.summText.text ?? "",
+                amount: Double(firstCell.summText.text ?? "") ?? 0.0,
                 category: Category(picture: "plus", title: "gfgfg"),
-                date: Date(),
-                note: "hhfhhf",
-                expenceIncome: false
+                date: thirdCell.datePik.date,
+                note: fifthhCell.summText.text ?? "",
+                expenceIncome: segments.selectedSegmentIndex == 0
             )
         )
     }
@@ -238,9 +247,14 @@ extension AddTransactionViewController: UITableViewDataSource {
 }
 
 extension AddTransactionViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let categoriesVC = CategoriesViewController()
-        present(categoriesVC, animated: true, completion: nil)
+        categoriesVC.categoryClouser = { category in
+            print(category)
+        }
+//        present(categoriesVC, animated: true, completion: nil)
+        navigationController?.pushViewController(categoriesVC, animated: true)
     }
 }
 

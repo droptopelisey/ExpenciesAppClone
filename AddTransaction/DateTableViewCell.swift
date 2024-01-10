@@ -20,7 +20,7 @@ class DateTableViewCell: UITableViewCell {
     }()
     
     
-    private lazy var datePik = {
+    private(set) lazy var datePik = {
         let piker = UIDatePicker(frame: .zero)
         piker.translatesAutoresizingMaskIntoConstraints = false
         return piker

@@ -161,13 +161,13 @@ class InfoCell: UITableViewCell {
                    expenceMoneyLabel.topAnchor.constraint(equalTo: expenceTextLabel.bottomAnchor, constant: 5),
                    expenceMoneyLabel.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -35),
                    
-                   pictureUp.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 25),
-                   pictureUp.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -20),
+                   pictureUp.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 12),
+                   pictureUp.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -12),
                    pictureUp.widthAnchor.constraint(equalToConstant: 45),
                    pictureUp.heightAnchor.constraint(equalToConstant: 45),
                    
-                   pictureDown.leadingAnchor.constraint(equalTo: verticalLineView.leadingAnchor, constant: 25),
-                   pictureDown.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -20),
+                   pictureDown.leadingAnchor.constraint(equalTo: verticalLineView.leadingAnchor, constant: 12),
+                   pictureDown.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -12),
                    pictureDown.widthAnchor.constraint(equalToConstant: 45),
                    pictureDown.heightAnchor.constraint(equalToConstant: 45),
                ])

@@ -9,9 +9,11 @@ import UIKit
 
 class AddTransactionTableViewCell: UITableViewCell {
     
+    
+    
     // MARK: Subviews
     
-    private lazy var summText = {
+    lazy var summText = {
         let textField = UITextField(frame: .zero)
         textField.placeholder = "Сумма"
         textField.translatesAutoresizingMaskIntoConstraints = false
