@@ -8,12 +8,12 @@
 import UIKit
 
 class AddTransactionViewController: UIViewController {
-    
-    var enteredTitle: String = ""
-    var enteredSumm: String = ""
-    var enteredSegment: Bool = false
-    var enterdNote: String = ""
-    var enteredCategory: Category = Category(picture: "car", title: "cars")
+//    
+//    var enteredTitle: String = ""
+//    var enteredSumm: String = ""
+//    var enteredSegment: Bool = false
+//    var enterdNote: String = ""
+//    var enteredCategory: Category = Category(picture: "car", title: "cars")
     
     enum Sections: Int, CaseIterable {
         case first
@@ -253,8 +253,8 @@ extension AddTransactionViewController: UITableViewDelegate {
         categoriesVC.categoryClouser = { category in
             print(category)
         }
-//        present(categoriesVC, animated: true, completion: nil)
-        navigationController?.pushViewController(categoriesVC, animated: true)
+        present(categoriesVC, animated: true, completion: nil)
+//        navigationController?.pushViewController(categoriesVC, animated: true)
     }
 }
 

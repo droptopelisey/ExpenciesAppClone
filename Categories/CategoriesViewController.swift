@@ -14,13 +14,13 @@ class CategoriesViewController: UIViewController {
     enum Sections: Int, CaseIterable {
         case first
         case second
-//        case third
-//        case fourth
-//        case fifth
-//        case sixth
-//        case seventh
-//        case eighth
-//        case ninth
+        case third
+        case fourth
+        case fifth
+        case sixth
+        case seventh
+        case eighth
+        case ninth
         
         var title: String {
             switch self {
@@ -28,6 +28,20 @@ class CategoriesViewController: UIViewController {
                 "Auto & Transport"
             case .second:
                 "Bills & Utilites"
+            case .third:
+                "Entertainment"
+            case .fourth:
+                "Fees & Charges"
+            case .fifth:
+                "Food & Dining"
+            case .sixth:
+                "Home"
+            case .seventh:
+                "Income"
+            case .eighth:
+                "Shopping"
+            case .ninth:
+                "Transfer"
             }
         }
         
@@ -37,15 +51,39 @@ class CategoriesViewController: UIViewController {
                 "car"
             case .second:
                 "list.clipboard"
+            case .third:
+                "film"
+            case .fourth:
+                "creditcard.and.123"
+            case .fifth:
+                "cart"
+            case .sixth:
+                "house"
+            case .seventh:
+                "dollarsign"
+            case .eighth:
+                "giftcard"
+            case .ninth:
+                "arrow.left.arrow.right"
             }
         }
     }
     
     
     let categories: [Category] = [
-    Category(picture: "bus.fill", title: "Public Transportation"),
-    Category(picture: "car.front.waves.up", title: "Taxi"),
-    Category(picture: "iphone.gen1", title: "Mobile Phone"),
+        Category(picture: "bus.fill", title: "Public Transportation"),
+        Category(picture: "car.front.waves.up", title: "Taxi"),
+        Category(picture: "iphone.gen1", title: "Mobile Phone"),
+        Category(picture: "film", title: "Movies & DVDs"),
+        Category(picture: "creditcard", title: "Bank Fee"),
+        Category(picture: "creditcard", title: "Finance Charge"),
+        Category(picture: "basket", title: "Groceries"),
+        Category(picture: "fork.knife", title: "Restaurants"),
+        Category(picture: "house.lodge", title: "Rent"),
+        Category(picture: "lightbulb.led", title: "Home Supplies"),
+        Category(picture: "dollarsign", title: "Paycheque"),
+        Category(picture: "gamecontroller", title: "Software"),
+        Category(picture: "arrow.left.arrow.right", title: "Credit Card Payment"),
     ]
     
     let categorySectionsData: [String:[String]] = [
@@ -173,20 +211,20 @@ extension CategoriesViewController: UITableViewDataSource {
             return 2
         case .second:
             return 1
-//        case .third:
-//            return 1
-//        case .fourth:
-//            return 2
-//        case .fifth:
-//            return 2
-//        case .sixth:
-//            return 2
-//        case .seventh:
-//            return 1
-//        case .eighth:
-//            return 1
-//        case .ninth:
-//            return 1
+        case .third:
+            return 1
+        case .fourth:
+            return 2
+        case .fifth:
+            return 2
+        case .sixth:
+            return 2
+        case .seventh:
+            return 1
+        case .eighth:
+            return 1
+        case .ninth:
+            return 1
         }
     }
     
