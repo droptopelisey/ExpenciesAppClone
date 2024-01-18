@@ -43,7 +43,8 @@ class TransactionsStoreClone1: NSObject, TransactionsStoreProtocol {
     }
     
     func getData() -> [TransactionModel] {
-        rezultController1.fetchedObjects?.compactMap {
+        try? rezultController1.performFetch()
+        return rezultController1.fetchedObjects?.compactMap {
             TransactionModel(
                 title: $0.name ?? "",
                 amount: $0.amount,
@@ -70,6 +71,10 @@ class TransactionsStoreClone1: NSObject, TransactionsStoreProtocol {
         } catch {
             print(error.localizedDescription)
         }
-        try? context.save()
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }

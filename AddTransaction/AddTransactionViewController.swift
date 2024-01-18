@@ -8,12 +8,11 @@
 import UIKit
 
 class AddTransactionViewController: UIViewController {
-//    
-//    var enteredTitle: String = ""
-//    var enteredSumm: String = ""
-//    var enteredSegment: Bool = false
-//    var enterdNote: String = ""
-//    var enteredCategory: Category = Category(picture: "car", title: "cars")
+    
+    var saveButtonClickedClouser: (() -> Void)?
+    
+    
+    var enteredCategory: Category = Category(picture: "car", title: "cars")
     
     enum Sections: Int, CaseIterable {
         case first
@@ -149,6 +148,7 @@ class AddTransactionViewController: UIViewController {
     
     @objc
     func saved() {
+        
         guard
             let firstCell = tableView.cellForRow(at: IndexPath(row: 0, section: Sections.first.rawValue)) as? AddTransactionTableViewCell,
             let secondCell = tableView.cellForRow(at: IndexPath(row: 1, section: Sections.first.rawValue)) as? AddTransactionTableViewCell,
@@ -162,12 +162,14 @@ class AddTransactionViewController: UIViewController {
             model: TransactionModel(
                 title: secondCell.summText.text ?? "",
                 amount: Double(firstCell.summText.text ?? "") ?? 0.0,
-                category: Category(picture: "plus", title: "gfgfg"),
+                category: enteredCategory,
                 date: thirdCell.datePik.date,
                 note: fifthhCell.summText.text ?? "",
                 expenceIncome: segments.selectedSegmentIndex == 0
             )
         )
+        saveButtonClickedClouser?()
+        dismiss(animated: true)
     }
 }
 
@@ -250,8 +252,18 @@ extension AddTransactionViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let categoriesVC = CategoriesViewController()
-        categoriesVC.categoryClouser = { category in
-            print(category)
+        categoriesVC.categoryClouser = { [weak self] category in
+            (tableView.cellForRow(
+                    at: IndexPath(
+                        row: 0,
+                        section: Sections.second.rawValue
+                    )
+                ) as? AddCategoryTableViewCell
+            )?.setup(
+                picture: category.picture,
+                title: category.title
+            )
+            self?.enteredCategory = category
         }
         present(categoriesVC, animated: true, completion: nil)
 //        navigationController?.pushViewController(categoriesVC, animated: true)

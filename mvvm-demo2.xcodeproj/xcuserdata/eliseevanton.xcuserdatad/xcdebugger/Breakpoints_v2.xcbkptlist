@@ -3,4 +3,117 @@
    uuid = "934F7FCB-4BFE-4028-BA88-B0F9C7ED59CA"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F9D937A8-DEBE-4F8B-A6ED-5E0421619BCA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dashboard/DashboardViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "circleButtonAction()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "744FB47E-CA9A-4606-96A9-91938CEF80EB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dashboard/DashboardViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "mockData"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8583E788-A071-4D03-972E-08B66062CD25"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dashboard/DashboardViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "getData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9B3AD7D-AC74-4AFC-B883-A210978B6859"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoreData/TransactionsStoreClone1.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "getData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D9B3AD7D-AC74-4AFC-B883-A210978B6859 - 702091f6ecf96254"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (mvvm_demo2.TransactionCD) -&gt; Swift.Optional&lt;mvvm_demo2.TransactionModel&gt; in mvvm_demo2.TransactionsStoreClone1.getData() -&gt; Swift.Array&lt;mvvm_demo2.TransactionModel&gt;"
+                  moduleName = "mvvm-demo2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eliseevanton/Desktop/SWIFT/CoursesProfiRu/Profi/gitWork/lessons-anton/mvvm-demo2/CoreData/TransactionsStoreClone1.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "2210">
+               </Location>
+               <Location
+                  uuid = "D9B3AD7D-AC74-4AFC-B883-A210978B6859 - b68135b0ae35e52e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "mvvm_demo2.TransactionsStoreClone1.getData() -&gt; Swift.Array&lt;mvvm_demo2.TransactionModel&gt;"
+                  moduleName = "mvvm-demo2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eliseevanton/Desktop/SWIFT/CoursesProfiRu/Profi/gitWork/lessons-anton/mvvm-demo2/CoreData/TransactionsStoreClone1.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "175">
+               </Location>
+               <Location
+                  uuid = "D9B3AD7D-AC74-4AFC-B883-A210978B6859 - 702091f6ecf96216"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (mvvm_demo2.TransactionCD) -&gt; Swift.Optional&lt;mvvm_demo2.TransactionModel&gt; in mvvm_demo2.TransactionsStoreClone1.getData() -&gt; Swift.Array&lt;mvvm_demo2.TransactionModel&gt;"
+                  moduleName = "mvvm-demo2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eliseevanton/Desktop/SWIFT/CoursesProfiRu/Profi/gitWork/lessons-anton/mvvm-demo2/CoreData/TransactionsStoreClone1.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "198">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

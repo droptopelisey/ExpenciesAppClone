@@ -67,4 +67,9 @@ class AddCategoryTableViewCell: UITableViewCell {
         ])
         
     }
+    
+    func setup(picture: String, title: String) {
+        categoryPic.image = UIImage(systemName: picture)
+        categoryLabel.text = title
+    }
 }

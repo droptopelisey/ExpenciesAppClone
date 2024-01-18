@@ -247,7 +247,7 @@ extension CategoriesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         categoryClouser?(categories[indexPath.section + indexPath.row])
-        
+        dismiss(animated: true)
         
     }
    
