@@ -14,11 +14,11 @@
 					<key>EndingLineNumber</key>
 					<string>66</string>
 					<key>StartingColumnNumber</key>
-					<string>63</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
 					<string>65</string>
 					<key>Timestamp</key>
-					<string>726218574.190858</string>
+					<string>727424939.255789</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -34,16 +34,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>
+				<string>        model.date = data.date
 </string>
 				<key>leading</key>
-				<string>        categoryRequest.predicate = NSPredicate(format: "%K = %@", #keyPath(CategoryCD.name), data.category.title)
-        do {
-           category = try context.fetch(categoryRequest).first!</string>
+				<string>        model.amount = data.amount
+        model.expenceIncome = data.expenceIncome
+</string>
 				<key>trailing</key>
-				<string>            
-        } catch {
-            print(error.localizedDescription)
+				<string>        let categoryRequest = CategoryCD.fetchRequest()
+        categoryRequest.predicate = NSPredicate(format: "%K = %@", #keyPath(CategoryCD.name), data.title)
+        do {
 </string>
 			</dict>
 			<key>type</key>
@@ -102,13 +102,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>270</string>
+					<string>260</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>269</string>
+					<string>259</string>
 					<key>Timestamp</key>
-					<string>726684694.944832</string>
+					<string>727426281.696103</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9022CEFA2B341365003674B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 905947962B1D7D2600CC3CD3 /* LaunchScreen.storyboard */; };
 		90396A032B468C1D00021425 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90396A012B468C1D00021425 /* CoreDataModel.xcdatamodeld */; };
-		90396A052B468FA400021425 /* TransactionsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90396A042B468FA400021425 /* TransactionsStore.swift */; };
 		9054EC322B446FE900760A30 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9054EC312B446FE900760A30 /* DateTableViewCell.swift */; };
 		905678AB2B4004CF00D74350 /* AddTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905678AA2B4004CF00D74350 /* AddTransactionViewController.swift */; };
 		905678AD2B4004E200D74350 /* AddTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905678AC2B4004E200D74350 /* AddTransactionViewModel.swift */; };
@@ -38,14 +37,14 @@
 		90DF81C62B20481300B86B16 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DF81C52B20481300B86B16 /* DetailsViewController.swift */; };
 		90DF81C92B204BE500B86B16 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DF81C82B204BE500B86B16 /* TransactionModel.swift */; };
 		90E1CE052B4927F2006D7FA1 /* CoreDataConteiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E1CE042B4927F2006D7FA1 /* CoreDataConteiner.swift */; };
-		90F243132B4A751C000A8ABB /* TransactionsStoreClone1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F243122B4A751C000A8ABB /* TransactionsStoreClone1.swift */; };
+		90F243132B4A751C000A8ABB /* TransactionsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F243122B4A751C000A8ABB /* TransactionsStore.swift */; };
+		90F49B8C2B5B9FDF003C0AE0 /* CategoriesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F49B8B2B5B9FDF003C0AE0 /* CategoriesStore.swift */; };
 		90FB23522B26DC8B0060DD5D /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FB23512B26DC8B0060DD5D /* HistoryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9022CEFC2B341409003674B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		90396A022B468C1D00021425 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
-		90396A042B468FA400021425 /* TransactionsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsStore.swift; sourceTree = "<group>"; };
 		9054EC312B446FE900760A30 /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 		905678AA2B4004CF00D74350 /* AddTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewController.swift; sourceTree = "<group>"; };
 		905678AC2B4004E200D74350 /* AddTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewModel.swift; sourceTree = "<group>"; };
@@ -77,7 +76,8 @@
 		90DF81C52B20481300B86B16 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		90DF81C82B204BE500B86B16 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		90E1CE042B4927F2006D7FA1 /* CoreDataConteiner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConteiner.swift; sourceTree = "<group>"; };
-		90F243122B4A751C000A8ABB /* TransactionsStoreClone1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsStoreClone1.swift; sourceTree = "<group>"; };
+		90F243122B4A751C000A8ABB /* TransactionsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsStore.swift; sourceTree = "<group>"; };
+		90F49B8B2B5B9FDF003C0AE0 /* CategoriesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesStore.swift; sourceTree = "<group>"; };
 		90FB23512B26DC8B0060DD5D /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,8 +207,8 @@
 			children = (
 				90E1CE042B4927F2006D7FA1 /* CoreDataConteiner.swift */,
 				90396A012B468C1D00021425 /* CoreDataModel.xcdatamodeld */,
-				90396A042B468FA400021425 /* TransactionsStore.swift */,
-				90F243122B4A751C000A8ABB /* TransactionsStoreClone1.swift */,
+				90F243122B4A751C000A8ABB /* TransactionsStore.swift */,
+				90F49B8B2B5B9FDF003C0AE0 /* CategoriesStore.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -294,7 +294,7 @@
 				90C157C52B25B07700ABDD50 /* FirstSectionSettingsCell.swift in Sources */,
 				905678AF2B40128B00D74350 /* AddTransactionTableViewCell.swift in Sources */,
 				90FB23522B26DC8B0060DD5D /* HistoryViewModel.swift in Sources */,
-				90F243132B4A751C000A8ABB /* TransactionsStoreClone1.swift in Sources */,
+				90F243132B4A751C000A8ABB /* TransactionsStore.swift in Sources */,
 				905678B12B4013E600D74350 /* AddCategoryTableViewCell.swift in Sources */,
 				90C157C72B25B0A300ABDD50 /* SecondSectionCell.swift in Sources */,
 				90A889B92B48EF0F007D5E01 /* CategoriesViewController.swift in Sources */,
@@ -316,11 +316,11 @@
 				905947AA2B1D8F6400CC3CD3 /* RecentCell.swift in Sources */,
 				9059478C2B1D7D2400CC3CD3 /* AppDelegate.swift in Sources */,
 				905947AE2B1D904600CC3CD3 /* HistoryViewController.swift in Sources */,
+				90F49B8C2B5B9FDF003C0AE0 /* CategoriesStore.swift in Sources */,
 				9054EC322B446FE900760A30 /* DateTableViewCell.swift in Sources */,
 				909ADE2D2B36B38800E09B6C /* SettingsManager.swift in Sources */,
 				905947B02B1D905900CC3CD3 /* SettingsViewController.swift in Sources */,
 				90DF81C62B20481300B86B16 /* DetailsViewController.swift in Sources */,
-				90396A052B468FA400021425 /* TransactionsStore.swift in Sources */,
 				90C157CB2B25B0C900ABDD50 /* FourthSectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

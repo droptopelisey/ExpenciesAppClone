@@ -25,7 +25,7 @@ class DashboardViewModel: DashboardViewModelProtocol {
     }
     
     func getData() {
-       mockData = TransactionsStoreClone1.shared.getData()
+       mockData = TransactionsStore.shared.getData()
     }
     
     func removeData(at index: Int) {

@@ -17,6 +17,6 @@ class AddTransactionViewModel: AddTransactionModelProtocol {
     var callback: (() -> Void)?
     
     func save(model: TransactionModel) {
-        TransactionsStoreClone1.shared.saveData(model)
+        TransactionsStore.shared.save(model)
     }
 }

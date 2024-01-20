@@ -17,6 +17,7 @@ class SettingsManager {
         case isFaceID
         case isNotification
         case notificationTime
+        case isFirstTime
     }
     
     var isFaceID: Bool {
@@ -45,4 +46,14 @@ class SettingsManager {
             UserDefaults.standard.set(newValue, forKey: Keys.notificationTime.rawValue)
         }
     }
+    
+    var isFirstTimeHere: Bool {
+        get {
+            !UserDefaults.standard.bool(forKey: Keys.isFirstTime.rawValue)
+        }
+        set {
+            UserDefaults.standard.set(!newValue, forKey: Keys.isFirstTime.rawValue)
+        }
+    }
+    
 }

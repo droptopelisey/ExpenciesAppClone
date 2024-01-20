@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23C71" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
     <entity name="CategoryCD" representedClassName="CategoryCD" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="pictureNmae" optional="YES" attributeType="String"/>
+        <attribute name="pictureName" optional="YES" attributeType="String"/>
         <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TransactionCD" inverseName="category" inverseEntity="TransactionCD"/>
     </entity>
     <entity name="TransactionCD" representedClassName="TransactionCD" syncable="YES" codeGenerationType="class">

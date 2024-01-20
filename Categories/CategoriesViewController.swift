@@ -70,89 +70,75 @@ class CategoriesViewController: UIViewController {
     }
     
     
-    let categories: [Category] = [
-        Category(picture: "bus.fill", title: "Public Transportation"),
-        Category(picture: "car.front.waves.up", title: "Taxi"),
-        Category(picture: "iphone.gen1", title: "Mobile Phone"),
-        Category(picture: "film", title: "Movies & DVDs"),
-        Category(picture: "creditcard", title: "Bank Fee"),
-        Category(picture: "creditcard", title: "Finance Charge"),
-        Category(picture: "basket", title: "Groceries"),
-        Category(picture: "fork.knife", title: "Restaurants"),
-        Category(picture: "house.lodge", title: "Rent"),
-        Category(picture: "lightbulb.led", title: "Home Supplies"),
-        Category(picture: "dollarsign", title: "Paycheque"),
-        Category(picture: "gamecontroller", title: "Software"),
-        Category(picture: "arrow.left.arrow.right", title: "Credit Card Payment"),
-    ]
+    let categories: [Category] = CategoriesStore.shared.getData()
     
-    let categorySectionsData: [String:[String]] = [
-        "Auto & Transport":[
-            "Public Transportation",
-            "Taxi"
-        ],
-        "Bills & Utilites":[
-            "Mobile Phone"
-        ],
-        "Entertainment":[
-            "Movies & DVDs"
-        ],
-        "Fees & Charges":[
-            "Bank Fee",
-            "Finance Charge"
-        ], 
-        "Food & Dining":[
-            "Groceries",
-            "Restaurants"
-        ], 
-        "Home":[
-            "Rent",
-            "Home Supplies"
-        ], 
-        "Income":[
-            "Paycheque"
-        ],
-        "Shopping":[
-            "Software"
-        ],
-        "Transfer":[
-            "Credit Card Payment"
-        ],
-    ]
-    
-    let categoriesPictures: [String:[String]] = [
-        "car":[
-            "bus.fill",
-            "car.front.waves.up"
-        ],
-        "list.clipboard":[
-            "iphone.gen1"
-        ],
-        "film":[
-            "film"
-        ],
-        "creditcard.and.123":[
-            "creditcard",
-            "creditcard"
-        ],
-        "cart":[
-            "basket",
-            "fork.knife"
-        ],
-        "house":[
-            "house.lodge",
-            "lightbulb.led"
-        ],
-        "dollarsign":[
-            "dollarsign"
-        ],
-        "giftcard":[
-            "gamecontroller"
-        ],
-        "arrow.left.arrow.right":[
-            "arrow.left.arrow.right"
-        ],
-    ]
+//    let categorySectionsData: [String:[String]] = [
+//        "Auto & Transport":[
+//            "Public Transportation",
+//            "Taxi"
+//        ],
+//        "Bills & Utilites":[
+//            "Mobile Phone"
+//        ],
+//        "Entertainment":[
+//            "Movies & DVDs"
+//        ],
+//        "Fees & Charges":[
+//            "Bank Fee",
+//            "Finance Charge"
+//        ], 
+//        "Food & Dining":[
+//            "Groceries",
+//            "Restaurants"
+//        ], 
+//        "Home":[
+//            "Rent",
+//            "Home Supplies"
+//        ], 
+//        "Income":[
+//            "Paycheque"
+//        ],
+//        "Shopping":[
+//            "Software"
+//        ],
+//        "Transfer":[
+//            "Credit Card Payment"
+//        ],
+//    ]
+//    
+//    let categoriesPictures: [String:[String]] = [
+//        "car":[
+//            "bus.fill",
+//            "car.front.waves.up"
+//        ],
+//        "list.clipboard":[
+//            "iphone.gen1"
+//        ],
+//        "film":[
+//            "film"
+//        ],
+//        "creditcard.and.123":[
+//            "creditcard",
+//            "creditcard"
+//        ],
+//        "cart":[
+//            "basket",
+//            "fork.knife"
+//        ],
+//        "house":[
+//            "house.lodge",
+//            "lightbulb.led"
+//        ],
+//        "dollarsign":[
+//            "dollarsign"
+//        ],
+//        "giftcard":[
+//            "gamecontroller"
+//        ],
+//        "arrow.left.arrow.right":[
+//            "arrow.left.arrow.right"
+//        ],
+//    ]
     
     // MARK: SubView TableView
     private lazy var tableView = {
@@ -186,6 +172,10 @@ class CategoriesViewController: UIViewController {
         ])
     }
     
+    
+    func loadCategories() {
+        
+    }
  
 }
 

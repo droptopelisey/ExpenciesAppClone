@@ -1,8 +1,8 @@
 //
-//  TransactionsStore.swift
+//  TransactionsStoreClone1.swift
 //  mvvm-demo2
 //
-//  Created by Eliseev Anton on 04.01.2024.
+//  Created by Eliseev Anton on 07.01.2024.
 //
 
 import Foundation
@@ -12,83 +12,69 @@ protocol TransactionsStoreProtocol {
     
     func getData() -> [TransactionModel]
     
-    func saveData(_ data: TransactionModel)
+    func save(_ data: TransactionModel)
 }
 
 class TransactionsStore: NSObject, TransactionsStoreProtocol {
     
-    let context: NSManagedObjectContext
+    static let shared = TransactionsStore(context: CoreDataConteiner.shared.persistentContainer.viewContext)
     
-    private lazy var rezultController = {
+    var context: NSManagedObjectContext
+    
+    private lazy var rezultController1 = {
+        
         let request = TransactionCD.fetchRequest()
-        request.sortDescriptors = [
-            NSSortDescriptor(key: "date", ascending: false)
-        ]
+        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+        
         let controller = NSFetchedResultsController(
             fetchRequest: request,
             managedObjectContext: context,
             sectionNameKeyPath: nil,
             cacheName: nil
         )
-        controller.delegate = self
-        do {
-           try controller.performFetch()
-        } catch {
-            print(error.localizedDescription)
-        }
-        
+        try? controller.performFetch()
         return controller
     }()
+    
+   
     
     init(context: NSManagedObjectContext) {
         self.context = context
     }
     
     func getData() -> [TransactionModel] {
-        rezultController.fetchedObjects?.compactMap {
+        try? rezultController1.performFetch()
+        return rezultController1.fetchedObjects?.compactMap {
             TransactionModel(
                 title: $0.name ?? "",
                 amount: $0.amount,
-                category: Category(picture: $0.category?.pictureNmae ?? "", title: $0.category?.name ?? ""),
+                category: Category(picture: $0.category?.pictureName ?? "", title: $0.category?.name ?? ""),
                 date: $0.date ?? Date(),
                 note: $0.note ?? "",
                 expenceIncome: $0.expenceIncome
-                
             )
-        } ?? []
+        }
+        ?? []
     }
     
-    func saveData(_ data: TransactionModel) {
+    func save(_ data: TransactionModel) {
+        let model = TransactionCD(context: context)
+        model.name = data.title
+        model.note = data.note
+        model.amount = data.amount
+        model.expenceIncome = data.expenceIncome
+        model.date = data.date
         let categoryRequest = CategoryCD.fetchRequest()
-        let category: CategoryCD
-        categoryRequest.predicate = NSPredicate(format: "%K = %@", #keyPath(CategoryCD.name), data.category.title)
+        categoryRequest.predicate = NSPredicate(format: "%K = %@", #keyPath(CategoryCD.name), data.title)
         do {
-           category = try context.fetch(categoryRequest).first!
-            
+            model.category = try context.fetch(categoryRequest).first
         } catch {
             print(error.localizedDescription)
-            return
         }
-        
-        let transactionCD = TransactionCD(context: context)
-        transactionCD.name = data.title
-        transactionCD.amount = data.amount
-        transactionCD.date = data.date
-        transactionCD.expenceIncome = data.expenceIncome
-        transactionCD.category = category
         do {
             try context.save()
         } catch {
             print(error.localizedDescription)
         }
-    }
-    
-    
-    
-}
-
-extension TransactionsStore: NSFetchedResultsControllerDelegate {
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        print("Worked")
     }
 }
