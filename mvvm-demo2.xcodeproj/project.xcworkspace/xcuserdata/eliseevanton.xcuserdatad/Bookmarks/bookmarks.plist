@@ -102,51 +102,6 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>260</string>
-					<key>StartingColumnNumber</key>
-					<string>0</string>
-					<key>StartingLineNumber</key>
-					<string>259</string>
-					<key>Timestamp</key>
-					<string>727426281.696103</string>
-				</dict>
-				<key>rebasable-url</key>
-				<dict>
-					<key>base</key>
-					<string>workspace</string>
-					<key>payload</key>
-					<dict>
-						<key>relative-path</key>
-						<string>Categories/CategoriesViewController.swift</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>text-context</key>
-			<dict>
-				<key>focused</key>
-				<string>        cell.setupLabel(title: categories[indexPath.section + indexPath.row].title)
-</string>
-				<key>leading</key>
-				<string>            right: 0
-        )
-</string>
-				<key>trailing</key>
-				<string>        cell.setupPicture(name: categories[indexPath.section + indexPath.row].picture)
-               
-        return cell
-</string>
-			</dict>
-			<key>type</key>
-			<string>bookmark</string>
-		</dict>
-		<dict>
-			<key>destination</key>
-			<dict>
-				<key>location-parameters</key>
-				<dict>
-					<key>EndingColumnNumber</key>
-					<string>0</string>
-					<key>EndingLineNumber</key>
 					<string>46</string>
 					<key>StartingColumnNumber</key>
 					<string>45</string>

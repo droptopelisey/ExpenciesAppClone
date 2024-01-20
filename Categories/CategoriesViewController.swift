@@ -72,78 +72,11 @@ class CategoriesViewController: UIViewController {
     
     let categories: [Category] = CategoriesStore.shared.getData()
     
-//    let categorySectionsData: [String:[String]] = [
-//        "Auto & Transport":[
-//            "Public Transportation",
-//            "Taxi"
-//        ],
-//        "Bills & Utilites":[
-//            "Mobile Phone"
-//        ],
-//        "Entertainment":[
-//            "Movies & DVDs"
-//        ],
-//        "Fees & Charges":[
-//            "Bank Fee",
-//            "Finance Charge"
-//        ], 
-//        "Food & Dining":[
-//            "Groceries",
-//            "Restaurants"
-//        ], 
-//        "Home":[
-//            "Rent",
-//            "Home Supplies"
-//        ], 
-//        "Income":[
-//            "Paycheque"
-//        ],
-//        "Shopping":[
-//            "Software"
-//        ],
-//        "Transfer":[
-//            "Credit Card Payment"
-//        ],
-//    ]
-//    
-//    let categoriesPictures: [String:[String]] = [
-//        "car":[
-//            "bus.fill",
-//            "car.front.waves.up"
-//        ],
-//        "list.clipboard":[
-//            "iphone.gen1"
-//        ],
-//        "film":[
-//            "film"
-//        ],
-//        "creditcard.and.123":[
-//            "creditcard",
-//            "creditcard"
-//        ],
-//        "cart":[
-//            "basket",
-//            "fork.knife"
-//        ],
-//        "house":[
-//            "house.lodge",
-//            "lightbulb.led"
-//        ],
-//        "dollarsign":[
-//            "dollarsign"
-//        ],
-//        "giftcard":[
-//            "gamecontroller"
-//        ],
-//        "arrow.left.arrow.right":[
-//            "arrow.left.arrow.right"
-//        ],
-//    ]
     
     // MARK: SubView TableView
     private lazy var tableView = {
         let table = UITableView(frame: .zero)
-        table.backgroundColor = UIColor(named: "bgColor")
+        table.backgroundColor = .clear
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
@@ -151,7 +84,8 @@ class CategoriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
+        view.backgroundColor = UIColor(named: "bgColor")
+        title = "Settings"
         setupTableView()
     }
     
@@ -257,8 +191,39 @@ extension CategoriesViewController {
             bottom: 0,
             right: 0
         )
-        cell.setupLabel(title: categories[indexPath.section + indexPath.row].title)
-        cell.setupPicture(name: categories[indexPath.section + indexPath.row].picture)
+        if indexPath.section == 0 {
+            cell.setupLabel(title: categories[indexPath.section + indexPath.row].title)
+        } else if indexPath.section == 4 {
+            cell.setupLabel(title: categories[indexPath.section + indexPath.row + 2].title)
+        } else if indexPath.section == 5 {
+            cell.setupLabel(title: categories[indexPath.section + indexPath.row + 3].title)
+        } else if indexPath.section == 6 {
+            cell.setupLabel(title: categories[indexPath.section + indexPath.row + 4].title)
+        } else if indexPath.section == 7 {
+            cell.setupLabel(title: categories[indexPath.section + indexPath.row + 5].title)
+        } else if indexPath.section == 8 {
+            cell.setupLabel(title: categories[indexPath.section + indexPath.row + 4].title)
+        } else {
+            cell.setupLabel(title: categories[indexPath.section + indexPath.row + 1].title)
+        }
+        
+        
+        if indexPath.section == 0 {
+            cell.setupPicture(name: categories[indexPath.section + indexPath.row].picture)
+        } else if indexPath.section == 4 {
+            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 2].picture)
+        } else if indexPath.section == 5 {
+            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 3].picture)
+        } else if indexPath.section == 6 {
+            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 4].picture)
+        } else if indexPath.section == 7 {
+            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 5].picture)
+        } else if indexPath.section == 8 {
+            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 4].picture)
+        } else {
+            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 1].picture)
+        }
+        
                
         return cell
     }
