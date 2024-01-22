@@ -172,4 +172,11 @@ class InfoCell: UITableViewCell {
                    pictureDown.heightAnchor.constraint(equalToConstant: 45),
                ])
     }
+    
+  
+    func setupLabels(balance: Double, expence: Double, income: Double ) {
+        balanceMoneyLabel.text = "\(balance)"
+        expenceMoneyLabel.text = "\(expence)"
+        incomeMoneyLabel.text = "\(income)"
+    }
 }

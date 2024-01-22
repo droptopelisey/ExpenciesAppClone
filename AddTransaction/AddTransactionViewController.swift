@@ -57,6 +57,7 @@ class AddTransactionViewController: UIViewController {
     
     private lazy var segments = {
         let segment = UISegmentedControl(items: ["Расходы", "Доходы"])
+        segment.selectedSegmentIndex = 0
         segment.translatesAutoresizingMaskIntoConstraints = false
         return segment
     }()

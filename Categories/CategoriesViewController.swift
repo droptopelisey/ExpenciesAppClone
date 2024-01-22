@@ -191,38 +191,13 @@ extension CategoriesViewController {
             bottom: 0,
             right: 0
         )
+      
         if indexPath.section == 0 {
             cell.setupLabel(title: categories[indexPath.section + indexPath.row].title)
-        } else if indexPath.section == 4 {
-            cell.setupLabel(title: categories[indexPath.section + indexPath.row + 2].title)
-        } else if indexPath.section == 5 {
-            cell.setupLabel(title: categories[indexPath.section + indexPath.row + 3].title)
-        } else if indexPath.section == 6 {
-            cell.setupLabel(title: categories[indexPath.section + indexPath.row + 4].title)
-        } else if indexPath.section == 7 {
-            cell.setupLabel(title: categories[indexPath.section + indexPath.row + 5].title)
-        } else if indexPath.section == 8 {
-            cell.setupLabel(title: categories[indexPath.section + indexPath.row + 4].title)
         } else {
             cell.setupLabel(title: categories[indexPath.section + indexPath.row + 1].title)
         }
-        
-        
-        if indexPath.section == 0 {
-            cell.setupPicture(name: categories[indexPath.section + indexPath.row].picture)
-        } else if indexPath.section == 4 {
-            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 2].picture)
-        } else if indexPath.section == 5 {
-            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 3].picture)
-        } else if indexPath.section == 6 {
-            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 4].picture)
-        } else if indexPath.section == 7 {
-            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 5].picture)
-        } else if indexPath.section == 8 {
-            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 4].picture)
-        } else {
-            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 1].picture)
-        }
+        cell.setupPicture(name: categories[indexPath.section + indexPath.row].picture)
         
                
         return cell

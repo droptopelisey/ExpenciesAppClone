@@ -145,7 +145,7 @@ extension DashboardViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailsVC = DetailsViewController()
-        detailsVC.transactionModel = viewModel.mockData[indexPath.row]
+        detailsVC.transactionModel = viewModel.data[indexPath.row]
         detailsVC.removeClosure = { [weak self ] in
             self?.viewModel.removeData(at: indexPath.row)
         }
@@ -170,7 +170,7 @@ extension DashboardViewController: UITableViewDataSource {
         case .info:
             return 1
         case .recent:
-            return viewModel.mockData.count
+            return viewModel.data.count
         }
     }
     
@@ -199,6 +199,8 @@ extension DashboardViewController: UITableViewDataSource {
             else {
                 return UITableViewCell()
             }
+            let moneyData = viewModel.getBalance()
+            cell.setupLabels(balance: moneyData.amount, expence: moneyData.expence, income: moneyData.income)
             return cell
         }
         
@@ -208,7 +210,7 @@ extension DashboardViewController: UITableViewDataSource {
             else {
                 return UITableViewCell()
             }
-            cell.setupModel(transaction: viewModel.mockData[indexPath.row])
+            cell.setupModel(transaction: viewModel.data[indexPath.row])
             
             cell.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
             return cell
