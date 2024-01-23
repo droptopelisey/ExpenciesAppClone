@@ -170,7 +170,24 @@ extension CategoriesViewController: UITableViewDataSource {
 extension CategoriesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        categoryClouser?(categories[indexPath.section + indexPath.row])
+        if indexPath.section == 0 {
+            categoryClouser?(categories[indexPath.section + indexPath.row])
+        } else if indexPath.section == 1 || indexPath.section == 2 {
+            categoryClouser?(categories[indexPath.section + indexPath.row + 1])
+        } else if indexPath.section == 3 {
+            categoryClouser?(categories[indexPath.section + indexPath.row + 1])
+        } else if indexPath.section == 4 {
+            categoryClouser?(categories[indexPath.section + indexPath.row + 2])
+        } else if indexPath.section == 5 {
+            categoryClouser?(categories[indexPath.section + indexPath.row + 3])
+        } else if indexPath.section == 6 {
+            categoryClouser?(categories[indexPath.section + indexPath.row + 4])
+        } else  if indexPath.section == 7 {
+            categoryClouser?(categories[indexPath.section + indexPath.row + 5])
+        } else if indexPath.section == 8 {
+            categoryClouser?(categories[indexPath.section + indexPath.row + 3])
+        }
+        
         dismiss(animated: true)
         
     }
@@ -194,10 +211,40 @@ extension CategoriesViewController {
       
         if indexPath.section == 0 {
             cell.setupLabel(title: categories[indexPath.section + indexPath.row].title)
-        } else {
+        } else if indexPath.section == 1 || indexPath.section == 2 {
             cell.setupLabel(title: categories[indexPath.section + indexPath.row + 1].title)
+        } else if indexPath.section == 3 {
+            cell.setupLabel(title: categories[indexPath.section + indexPath.row + 1].title)
+        } else if indexPath.section == 4 {
+            cell.setupLabel(title: categories[indexPath.section + indexPath.row + 2].title)
+        } else if indexPath.section == 5 {
+            cell.setupLabel(title: categories[indexPath.section + indexPath.row + 3].title)
+        } else if indexPath.section == 6 {
+            cell.setupLabel(title: categories[indexPath.section + indexPath.row + 4].title)
+        } else  if indexPath.section == 7 {
+            cell.setupLabel(title: categories[indexPath.section + indexPath.row + 5].title)
+        } else if indexPath.section == 8 {
+            cell.setupLabel(title: categories[indexPath.section + indexPath.row + 3].title)
         }
-        cell.setupPicture(name: categories[indexPath.section + indexPath.row].picture)
+        
+        if indexPath.section == 0 {
+            cell.setupPicture(name: categories[indexPath.section + indexPath.row].picture)
+        } else if indexPath.section == 1 || indexPath.section == 2 {
+            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 1].picture)
+        } else if indexPath.section == 3 {
+            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 1].picture)
+        } else if indexPath.section == 4 {
+            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 2].picture)
+        } else if indexPath.section == 5 {
+            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 3].picture)
+        } else if indexPath.section == 6 {
+            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 4].picture)
+        } else  if indexPath.section == 7 {
+            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 5].picture)
+        } else if indexPath.section == 8 {
+            cell.setupPicture(name: categories[indexPath.section + indexPath.row + 3].picture)
+        }
+       
         
                
         return cell

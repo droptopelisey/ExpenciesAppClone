@@ -76,27 +76,27 @@ class RecentCell: UITableViewCell {
         cellView.addSubview(pictureView)
         
         NSLayoutConstraint.activate([
-            cellView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            cellView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
-            cellView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            cellView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            cellView.topAnchor.constraint(equalTo: topAnchor),
+            cellView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            cellView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            cellView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            firstLabel.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 3),
-            firstLabel.leadingAnchor.constraint(equalTo: pictureView.leadingAnchor, constant: 55),
+            firstLabel.topAnchor.constraint(equalTo: cellView.topAnchor, constant: 12),
+            firstLabel.leadingAnchor.constraint(equalTo: pictureView.leadingAnchor, constant: 56),
             
-            secondLabel.topAnchor.constraint(equalTo: firstLabel.bottomAnchor, constant: 3),
-            secondLabel.leadingAnchor.constraint(equalTo: pictureView.leadingAnchor, constant: 55),
+            secondLabel.topAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -56),
+            secondLabel.leadingAnchor.constraint(equalTo: pictureView.leadingAnchor, constant: 56),
             
-            thirdLabel.topAnchor.constraint(equalTo: secondLabel.bottomAnchor, constant: 3),
-            thirdLabel.leadingAnchor.constraint(equalTo: pictureView.leadingAnchor, constant: 55),
+            thirdLabel.topAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -28),
+            thirdLabel.leadingAnchor.constraint(equalTo: pictureView.leadingAnchor, constant: 56),
             
             amountMoneyLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
-            amountMoneyLabel.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -15),
+            amountMoneyLabel.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -12),
             
-            pictureView.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 10),
-            pictureView.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -10),
-            pictureView.heightAnchor.constraint(equalToConstant: 45),
-            pictureView.widthAnchor.constraint(equalToConstant: 45),
+            pictureView.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 12),
+            pictureView.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -12),
+            pictureView.heightAnchor.constraint(equalToConstant: 44),
+            pictureView.widthAnchor.constraint(equalToConstant: 44),
         ])
     }
     
@@ -104,6 +104,7 @@ class RecentCell: UITableViewCell {
         firstLabel.text = transaction.title
         secondLabel.text = "\(transaction.category.title)"
         amountMoneyLabel.text = "\(transaction.amount)"
+        thirdLabel.text = transaction.dateString
     }
 }
 

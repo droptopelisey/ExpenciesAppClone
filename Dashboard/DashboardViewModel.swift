@@ -38,10 +38,6 @@ class DashboardViewModel: DashboardViewModelProtocol {
         var amount: Double = 0.0
         var income: Double = 0.0
         var expence: Double = 0.0
-//        for i in data {
-//            income += i.expenceIncome == false ? i.amount : 0
-//            expence += i.expenceIncome ? i.amount : 0
-//        }
         data.forEach {
             income += $0.expenceIncome == false ? $0.amount : 0
             expence += $0.expenceIncome ? $0.amount : 0
