@@ -12,7 +12,7 @@ class AddTransactionViewController: UIViewController {
     var saveButtonClickedClouser: (() -> Void)?
     
     
-    var enteredCategory: Category = Category(picture: "car", title: "cars")
+    var enteredCategory: CategoryModel = CategoryModel(picture: "car", title: "cars")
     
     enum Sections: Int, CaseIterable {
         case first

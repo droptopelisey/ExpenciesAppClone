@@ -27,7 +27,7 @@ class DashboardViewModel: DashboardViewModelProtocol {
     }
     
     func getData() {
-        data = TransactionsStore.shared.getData()
+        data = TransactionsStore.shared.getDataLastDay2()
     }
     
     func removeData(at index: Int) {

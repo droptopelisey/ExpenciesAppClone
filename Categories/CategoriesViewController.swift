@@ -9,7 +9,7 @@ import UIKit
 
 class CategoriesViewController: UIViewController {
     
-    var categoryClouser: ((Category) -> Void)?
+    var categoryClouser: ((CategoryModel) -> Void)?
     
     enum Sections: Int, CaseIterable {
         case first
@@ -70,7 +70,7 @@ class CategoriesViewController: UIViewController {
     }
     
     
-    let categories: [Category] = CategoriesStore.shared.getData()
+    let categories: [CategoryModel] = CategoriesStore.shared.getData()
     
     
     // MARK: SubView TableView

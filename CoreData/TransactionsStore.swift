@@ -9,9 +9,8 @@ import Foundation
 import CoreData
 
 protocol TransactionsStoreProtocol {
-    
     func getData() -> [TransactionModel]
-    
+    func getDataLastDay() -> [TransactionModel]
     func save(_ data: TransactionModel)
 }
 
@@ -36,7 +35,20 @@ class TransactionsStore: NSObject, TransactionsStoreProtocol {
         return controller
     }()
     
-   
+    private lazy var rezultController2 = {
+        
+        let request = TransactionCD.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+        request.predicate = NSPredicate(format: "date == %@", Date().removeTime! as NSDate)
+        let controller = NSFetchedResultsController(
+            fetchRequest: request,
+            managedObjectContext: context,
+            sectionNameKeyPath: nil,
+            cacheName: nil
+        )
+        try? controller.performFetch()
+        return controller
+    }()
     
     init(context: NSManagedObjectContext) {
         self.context = context
@@ -48,13 +60,56 @@ class TransactionsStore: NSObject, TransactionsStoreProtocol {
             TransactionModel(
                 title: $0.name ?? "",
                 amount: $0.amount,
-                category: Category(picture: $0.category?.pictureName ?? "", title: $0.category?.name ?? ""),
+                category: CategoryModel(picture: $0.category?.pictureName ?? "", title: $0.category?.name ?? ""),
                 date: $0.date ?? Date(),
                 note: $0.note ?? "",
                 expenceIncome: $0.expenceIncome
             )
         }
         ?? []
+    }
+    
+    func getDataLastDay() -> [TransactionModel] {
+        try? rezultController1.performFetch()
+        
+        let rezultObjects = rezultController1.fetchedObjects?
+            .filter {
+                $0.date?.removeTime == Date().removeTime
+            }
+            .compactMap {
+            TransactionModel(
+                title: $0.name ?? "",
+                amount: $0.amount,
+                category: CategoryModel(picture: $0.category?.pictureName ?? "", title: $0.category?.name ?? ""),
+                date: $0.date ?? Date(),
+                note: $0.note ?? "",
+                expenceIncome: $0.expenceIncome
+            )
+        }
+        ?? []
+        
+        return rezultObjects
+    }
+    
+    func getDataLastDay2() -> [TransactionModel] {
+        try? rezultController2.performFetch()
+        
+        let rezultObjects = rezultController2.fetchedObjects?
+        
+            
+            .compactMap {
+            TransactionModel(
+                title: $0.name ?? "",
+                amount: $0.amount,
+                category: CategoryModel(picture: $0.category?.pictureName ?? "", title: $0.category?.name ?? ""),
+                date: $0.date ?? Date(),
+                note: $0.note ?? "",
+                expenceIncome: $0.expenceIncome
+            )
+        }
+        ?? []
+        
+        return rezultObjects
     }
     
     func save(_ data: TransactionModel) {
@@ -65,7 +120,7 @@ class TransactionsStore: NSObject, TransactionsStoreProtocol {
         model.expenceIncome = data.expenceIncome
         model.date = data.date
         let categoryRequest = CategoryCD.fetchRequest()
-        categoryRequest.predicate = NSPredicate(format: "%K = %@", #keyPath(CategoryCD.name), data.title)
+        categoryRequest.predicate = NSPredicate(format: "%K = %@", #keyPath(CategoryCD.name), data.category.title)
         do {
             model.category = try context.fetch(categoryRequest).first
         } catch {

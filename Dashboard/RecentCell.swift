@@ -105,6 +105,7 @@ class RecentCell: UITableViewCell {
         secondLabel.text = "\(transaction.category.title)"
         amountMoneyLabel.text = "\(transaction.amount)"
         thirdLabel.text = transaction.dateString
+        pictureView.image = UIImage(systemName: transaction.category.picture)
     }
 }
 

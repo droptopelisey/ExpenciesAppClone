@@ -10,17 +10,11 @@ import Foundation
 struct TransactionModel {
     var title: String
     var amount: Double
-    var category: Category
+    var category: CategoryModel
     var date: Date
     var note: String
     var expenceIncome: Bool
 }
-
-struct Category {
-    var picture: String
-    var title: String
-}
-
 
 extension TransactionModel {
     var dateString: String {
