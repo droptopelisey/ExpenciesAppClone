@@ -118,7 +118,7 @@ class TransactionsStore: NSObject, TransactionsStoreProtocol {
         model.note = data.note
         model.amount = data.amount
         model.expenceIncome = data.expenceIncome
-        model.date = data.date
+        model.date = data.date.removeTime
         let categoryRequest = CategoryCD.fetchRequest()
         categoryRequest.predicate = NSPredicate(format: "%K = %@", #keyPath(CategoryCD.name), data.category.title)
         do {
@@ -132,6 +132,8 @@ class TransactionsStore: NSObject, TransactionsStoreProtocol {
             print(error.localizedDescription)
         }
     }
+    
+   
     
 //    func todayTransactions() -> [TransactionModel] {
 //        let transactions: [TransactionModel] = []

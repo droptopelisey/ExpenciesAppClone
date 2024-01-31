@@ -9,10 +9,6 @@ import UIKit
 
 class HistoryViewController: UIViewController {
     
-    var numbersArray = [13, 14, 18, 25, 555, 678]
-    
-    var filtredNumbers: [Int] = []
-    
 // MARK: SubView TableView
     private lazy var tableView = {
         let table = UITableView(frame: .zero)
@@ -38,17 +34,17 @@ class HistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        filtredNumbers = numbersArray
         view.backgroundColor = UIColor(named: "bgColor")
         title = "History"
+        viewModel.getTransactions()
         setupTableView()
         setupSearchController()
     }
     
 // MARK: Bind
     private func bind() {
-        viewModel.callback = {
-            
+        viewModel.callback = { [weak self] in
+            self?.tableView.reloadData()
         }
     }
     
@@ -83,7 +79,7 @@ extension HistoryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        filtredNumbers.count
+        viewModel.transactions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -92,7 +88,7 @@ extension HistoryViewController: UITableViewDataSource {
         else {
             return UITableViewCell()
         }
-        cell.setupModel(transaction: TransactionModel(title: "\(filtredNumbers[indexPath.row])", amount: 1, category: CategoryModel(picture: "plus", title: "plus"), date: Date(), note: "ho ho ho", expenceIncome: false))
+        cell.setupModel(transaction: viewModel.transactions[indexPath.row])
         return cell
     }
     
@@ -107,11 +103,11 @@ extension HistoryViewController: UITableViewDelegate {
 extension HistoryViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-        filtredNumbers = numbersArray.filter { number in
-            guard let searchText = searchController.searchBar.text?.lowercased() else { return false }
-            let numberInString = String(number).lowercased()
-            return numberInString.contains(searchText)
-        }
+//        filtredNumbers = numbersArray.filter { number in
+//            guard let searchText = searchController.searchBar.text?.lowercased() else { return false }
+//            let numberInString = String(number).lowercased()
+//            return numberInString.contains(searchText)
+//        }
         tableView.reloadData()
     }
     

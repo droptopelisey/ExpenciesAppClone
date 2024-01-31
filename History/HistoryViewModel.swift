@@ -9,8 +9,21 @@ import Foundation
 
 protocol HistoryViewModelProtocol {
     var callback: (() -> Void)? { get set }
+    var transactions: [TransactionModel] { get }
+    func getTransactions()
 }
 
 class HistoryViewModel: HistoryViewModelProtocol {
+    
+    var transactions: [TransactionModel] = [] {
+        didSet {
+            callback?()
+        }
+    }
+    
     var callback: (() -> Void)?
+    
+    func getTransactions() {
+        transactions = TransactionsStore.shared.getData()
+    }
 }
