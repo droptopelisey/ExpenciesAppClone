@@ -8,9 +8,6 @@
 import UIKit
 
 class AddTransactionTableViewCell: UITableViewCell {
-    
-    
-    
     // MARK: Subviews
     
     lazy var summText = {
@@ -20,11 +17,7 @@ class AddTransactionTableViewCell: UITableViewCell {
         return textField
     }()
     
-   
-    
-    
-
-// MARK: Life Cycle
+    // MARK: Life Cycle
         
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
             super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -35,7 +28,6 @@ class AddTransactionTableViewCell: UITableViewCell {
             super.init(coder: coder)
         setupSubViews()
     }
-    
     
     // MARK: Setups
     

@@ -34,6 +34,7 @@ class InfoCell: UITableViewCell {
     private lazy var balanceTextLabel = {
             let label = UILabel(frame: .zero)
             label.text = "Balance"
+            label.font = UIFont(name: "Arial", size: 20)
             label.textColor = .black
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
@@ -43,7 +44,7 @@ class InfoCell: UITableViewCell {
             let label = UILabel(frame: .zero)
             label.text = "$ 6,150"
             label.textColor = .black
-            label.font = .boldSystemFont(ofSize: 20)
+            label.font = .boldSystemFont(ofSize: 26)
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
         }()
@@ -51,6 +52,7 @@ class InfoCell: UITableViewCell {
     private lazy var incomeTextLabel = {
            let label = UILabel(frame: .zero)
            label.text = "Income"
+           label.font = UIFont(name: "Arial", size: 19)
            label.textColor = .black
            label.translatesAutoresizingMaskIntoConstraints = false
            return label
@@ -60,6 +62,7 @@ class InfoCell: UITableViewCell {
            let label = UILabel(frame: .zero)
            label.text = "$ 10,000"
            label.textColor = .black
+           label.font = .boldSystemFont(ofSize: 18)
            label.translatesAutoresizingMaskIntoConstraints = false
            return label
        }()
@@ -67,6 +70,7 @@ class InfoCell: UITableViewCell {
     private lazy var expenceTextLabel = {
            let label = UILabel(frame: .zero)
            label.text = "Expence"
+           label.font = UIFont(name: "Arial", size: 19)
            label.textColor = .black
            label.translatesAutoresizingMaskIntoConstraints = false
            return label
@@ -76,6 +80,7 @@ class InfoCell: UITableViewCell {
            let label = UILabel(frame: .zero)
            label.text = "$ 3,850"
            label.textColor = .black
+           label.font = .boldSystemFont(ofSize: 18)
            label.translatesAutoresizingMaskIntoConstraints = false
            return label
        }()
@@ -150,16 +155,16 @@ class InfoCell: UITableViewCell {
                    balanceMoneyLabel.topAnchor.constraint(equalTo: balanceTextLabel.bottomAnchor, constant: 5),
 
                    incomeTextLabel.topAnchor.constraint(equalTo: horizontalLineView.bottomAnchor, constant: 15),
-                   incomeTextLabel.trailingAnchor.constraint(equalTo: verticalLineView.leadingAnchor, constant: -35),
+                   incomeTextLabel.trailingAnchor.constraint(equalTo: verticalLineView.leadingAnchor, constant: -30),
 
                    incomeMoneyLabel.topAnchor.constraint(equalTo: incomeTextLabel.bottomAnchor, constant: 5),
-                   incomeMoneyLabel.trailingAnchor.constraint(equalTo: verticalLineView.leadingAnchor, constant: -25),
+                   incomeMoneyLabel.trailingAnchor.constraint(equalTo: verticalLineView.leadingAnchor, constant: -30),
 
                    expenceTextLabel.topAnchor.constraint(equalTo: horizontalLineView.bottomAnchor, constant: 15),
-                   expenceTextLabel.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -35),
+                   expenceTextLabel.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -20),
 
                    expenceMoneyLabel.topAnchor.constraint(equalTo: expenceTextLabel.bottomAnchor, constant: 5),
-                   expenceMoneyLabel.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -35),
+                   expenceMoneyLabel.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -20),
                    
                    pictureUp.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 12),
                    pictureUp.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -12),

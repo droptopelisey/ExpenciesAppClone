@@ -11,7 +11,6 @@ class AddTransactionViewController: UIViewController {
     
     var saveButtonClickedClouser: (() -> Void)?
     
-    
     var enteredCategory: CategoryModel = CategoryModel(picture: "car", title: "cars")
     
     enum Sections: Int, CaseIterable {
@@ -53,7 +52,6 @@ class AddTransactionViewController: UIViewController {
         button.addTarget(self, action: #selector(saved), for: .touchUpInside)
         return button
     }()
-    
     
     private lazy var segments = {
         let segment = UISegmentedControl(items: ["Расходы", "Доходы"])

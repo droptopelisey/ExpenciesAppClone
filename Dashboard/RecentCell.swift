@@ -93,10 +93,10 @@ class RecentCell: UITableViewCell {
             amountMoneyLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
             amountMoneyLabel.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -12),
             
-            pictureView.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 12),
-            pictureView.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -12),
-            pictureView.heightAnchor.constraint(equalToConstant: 44),
-            pictureView.widthAnchor.constraint(equalToConstant: 44),
+            pictureView.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
+            pictureView.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 24),
+            pictureView.heightAnchor.constraint(equalToConstant: 28),
+            pictureView.widthAnchor.constraint(equalToConstant: 28),
         ])
     }
     

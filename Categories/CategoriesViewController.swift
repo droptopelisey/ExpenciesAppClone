@@ -69,9 +69,7 @@ class CategoriesViewController: UIViewController {
         }
     }
     
-    
     let categories: [CategoryModel] = CategoriesStore.shared.getData()
-    
     
     // MARK: SubView TableView
     private lazy var tableView = {
@@ -244,9 +242,6 @@ extension CategoriesViewController {
         } else if indexPath.section == 8 {
             cell.setupPicture(name: categories[indexPath.section + indexPath.row + 3].picture)
         }
-       
-        
-               
         return cell
     }
 }

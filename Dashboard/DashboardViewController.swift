@@ -120,9 +120,7 @@ class DashboardViewController: UIViewController {
             self?.viewModel.getData()
             self?.tableView.reloadData()
         }
-//        let nVc = UINavigationController(rootViewController: vc)
         present(vc, animated: true)
-//        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

@@ -42,8 +42,6 @@ class DashboardViewModel: DashboardViewModelProtocol {
             income += $0.expenceIncome == false ? $0.amount : 0
             expence += $0.expenceIncome ? $0.amount : 0
         }
-//        income = data.reduce(0, {$0 + ($1.expenceIncome == false ? $1.amount : 0)})
-//        expence = data.reduce(0, { $0 + ($1.expenceIncome == true ? $1.amount : 0)})
         amount = income - expence
         return (amount, income, expence)
     }

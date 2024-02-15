@@ -34,16 +34,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>        model.date = data.date
+				<string>        model.note = data.note
 </string>
 				<key>leading</key>
-				<string>        model.amount = data.amount
-        model.expenceIncome = data.expenceIncome
+				<string>        let model = TransactionCD(context: context)
+        model.name = data.title
 </string>
 				<key>trailing</key>
-				<string>        let categoryRequest = CategoryCD.fetchRequest()
-        categoryRequest.predicate = NSPredicate(format: "%K = %@", #keyPath(CategoryCD.name), data.category.title)
-        do {
+				<string>        model.amount = data.amount
+        model.expenceIncome = data.expenceIncome
+        model.date = data.date.removeTime
 </string>
 			</dict>
 			<key>type</key>

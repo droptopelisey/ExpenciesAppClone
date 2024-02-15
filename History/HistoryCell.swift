@@ -93,10 +93,10 @@ class HistoryCell: UITableViewCell {
             amountMoneyLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
             amountMoneyLabel.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -15),
             
-            pictureView.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 10),
-            pictureView.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -10),
-            pictureView.heightAnchor.constraint(equalToConstant: 45),
-            pictureView.widthAnchor.constraint(equalToConstant: 45),
+            pictureView.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 24),
+            pictureView.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
+            pictureView.heightAnchor.constraint(equalToConstant: 28),
+            pictureView.widthAnchor.constraint(equalToConstant: 28),
         ])
     }
     

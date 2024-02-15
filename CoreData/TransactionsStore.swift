@@ -132,13 +132,4 @@ class TransactionsStore: NSObject, TransactionsStoreProtocol {
             print(error.localizedDescription)
         }
     }
-    
-   
-    
-//    func todayTransactions() -> [TransactionModel] {
-//        let transactions: [TransactionModel] = []
-//        let request = TransactionCD.fetchRequest()
-//        categoryRequest.predicate = NSPredicate(format: "%K = %@", #keyPath(CategoryCD.name), data.title)
-//        try? controller.performFetch()
-//    }
 }

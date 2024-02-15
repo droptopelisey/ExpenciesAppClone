@@ -55,5 +55,4 @@ class SettingsManager {
             UserDefaults.standard.set(!newValue, forKey: Keys.isFirstTime.rawValue)
         }
     }
-    
 }

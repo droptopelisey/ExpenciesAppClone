@@ -26,8 +26,6 @@ class CategoriesViewCell: UITableViewCell {
         return title
     }()
     
-  
-
     // MARK: Life Cycle
         
         override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -40,7 +38,6 @@ class CategoriesViewCell: UITableViewCell {
             setupSubViews()
         }
     
- 
     // MARK: Setups
     
     private func setupSubViews() {
@@ -57,7 +54,6 @@ class CategoriesViewCell: UITableViewCell {
             titleLabel.leadingAnchor.constraint(equalTo: picture.trailingAnchor, constant: 18),
         ])
     }
-    
     
     func setupPicture(name: String) {
         picture.image = UIImage(systemName: name)
