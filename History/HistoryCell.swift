@@ -7,6 +7,9 @@
 
 import UIKit
 
+// Настроить поиск
+
+
 class HistoryCell: UITableViewCell {
 // MARK: SubViews
     private lazy var cellView = {
